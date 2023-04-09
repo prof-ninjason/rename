@@ -1,0 +1,25 @@
+#!/bin/bash
+#~/bin/rename_ext mkv mp4
+### WARNING DOES NOT WORK ON .MOV WILL APPEND .MOVMP4
+#!/bin/bash
+
+for f in *
+do
+  new="${f// /_}"
+  if [ "$new" != "$f" ]
+  then
+    if [ -e "$new" ]
+    then
+      echo not renaming \""$f"\" because \""$new"\" already exists
+    else
+      echo moving "$f" to "$new"
+    mv "$f" "$new"
+  fi
+fi
+done
+
+for f in `find . -iname "*.$1"`
+do
+  [ -f "$f" ] && mv -v "$f" "${f%$1}$2"
+done
+
