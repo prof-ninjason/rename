@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 #~/bin/rename_ext mkv mp4
 ### WARNING DOES NOT WORK ON .MOV WILL APPEND .MOVMP4
 #!/bin/bash
